@@ -1,0 +1,32 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/"
+  to = "/views/public/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/views/admin"
+  to = "/views/admin/login.html"
+  status = 200
+
+[[redirects]]
+  from = "/views/admin/"
+  to = "/views/admin/login.html"
+  status = 200
+
+[[redirects]]
+  from = "/views/arbitro"
+  to = "/views/arbitro/login.html"
+  status = 200
+
+[[redirects]]
+  from = "/views/arbitro/"
+  to = "/views/arbitro/login.html"
+  status = 200
+
+[[redirects]]
+  from = "/scoreEd/*"
+  to = "/:splat"
+  status = 200

@@ -1,0 +1,137 @@
+/* ── Reset & Base ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0f2318 0%, #1e4028 50%, #163020 100%);
+    padding: 1rem;
+}
+
+/* ── Logo ─────────────────────────────────────────────────── */
+.logo {
+    display: flex; align-items: center; gap: .75rem;
+    margin-bottom: 2rem; text-decoration: none;
+}
+
+.logo-icon { font-size: 2rem; }
+
+.logo-text { display: flex; flex-direction: column; line-height: 1; }
+
+.logo-name {
+    font-size: 1.8rem; font-weight: 900;
+    color: #fff; letter-spacing: -.5px;
+}
+
+.logo-name span { color: #f97316; }
+
+.logo-sub {
+    font-size: .65rem; font-weight: 700;
+    letter-spacing: 2.5px; color: #94a3b8;
+    text-transform: uppercase; margin-top: .15rem;
+}
+
+/* ── Card ─────────────────────────────────────────────────── */
+.card {
+    background: #fff; border-radius: 14px;
+    width: 100%; max-width: 420px;
+    overflow: hidden;
+    box-shadow: 0 24px 64px rgba(0,0,0,.4);
+}
+
+.card-body { padding: 2rem; }
+
+.card-title {
+    font-size: 1.2rem; font-weight: 800;
+    color: #0d1b2a; text-align: center;
+}
+
+.card-sub {
+    font-size: .82rem; color: #94a3b8;
+    text-align: center; margin-top: .3rem; margin-bottom: 1.5rem;
+}
+
+/* ── Indicador de rol ─────────────────────────────────────── */
+.rol-indicator {
+    display: flex; align-items: center; justify-content: center; gap: .5rem;
+    border-radius: 8px; padding: .6rem 1rem;
+    margin-bottom: 1.5rem;
+    font-size: .85rem; font-weight: 700;
+}
+
+.rol-indicator.admin {
+    background: #e8f5e9; border: 1px solid #a8c9b4; color: #1e4028;
+}
+
+.rol-indicator.arbitro {
+    background: #f0fdfa; border: 1px solid #99f6e4; color: #0d9488;
+}
+
+/* ── Formulario ───────────────────────────────────────────── */
+.form-group { display: flex; flex-direction: column; gap: .35rem; margin-bottom: 1rem; }
+
+.form-group label { font-size: .8rem; font-weight: 600; color: #0d1b2a; }
+
+.form-control {
+    padding: .65rem .9rem; border: 1px solid #e2e8f0;
+    border-radius: 8px; font-size: .9rem; outline: none;
+    transition: border-color .15s, box-shadow .15s;
+    width: 100%;
+}
+
+.form-control.admin:focus {
+    border-color: #4ade80;
+    box-shadow: 0 0 0 3px rgba(74,222,128,.15);
+}
+
+.form-control.arbitro:focus {
+    border-color: #0d9488;
+    box-shadow: 0 0 0 3px rgba(13,148,136,.12);
+}
+
+.btn-submit {
+    width: 100%; padding: .75rem; border: none;
+    color: #fff; border-radius: 8px;
+    font-size: .95rem; font-weight: 700;
+    cursor: pointer; margin-top: .5rem; transition: background .15s;
+}
+
+.btn-submit.admin   { background: #1e4028; }
+.btn-submit.admin:hover   { background: #0f2318; }
+.btn-submit.arbitro { background: #0d9488; }
+.btn-submit.arbitro:hover { background: #0f766e; }
+
+/* ── Error ────────────────────────────────────────────────── */
+.msg-error {
+    background: #fff1f2; color: #991b1b;
+    border: 1px solid #fecdd3; border-radius: 8px;
+    padding: .6rem .9rem; font-size: .82rem; font-weight: 500;
+    display: none; margin-top: .75rem;
+}
+
+/* ── Footer ───────────────────────────────────────────────── */
+.card-footer {
+    background: #f8fafc; border-top: 1px solid #e2e8f0;
+    padding: .85rem; text-align: center;
+    font-size: .72rem; color: #94a3b8;
+}
+
+/* ── Link a otro rol ──────────────────────────────────────── */
+.link-otro {
+    display: block; text-align: center;
+    margin-top: 1rem; font-size: .8rem; color: #94a3b8;
+}
+
+.link-otro a.admin   { color: #4ade80; text-decoration: none; }
+.link-otro a.arbitro { color: #0d9488; text-decoration: none; }
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 480px) {
+    .logo-name { font-size: 1.4rem; }
+    .card-body { padding: 1.5rem; }
+    .card { max-width: 100%; }
+}

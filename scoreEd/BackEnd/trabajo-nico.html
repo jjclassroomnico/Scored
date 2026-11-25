@@ -1,0 +1,104 @@
+ESTRUCTURA PRINCIPAL
+
+/scoreEd
+│
+├── index.html                  → Vista pública principal (visitante)
+│
+├── /assets
+│   ├── /css                    → Hojas de estilo
+│   ├── /js                     → Scripts de JavaScript
+│   └── /img                    → Imágenes e íconos
+│
+├── /includes                   → Componentes reutilizables del front-end
+│                                 (encabezado, navegación, pie de página)
+│
+├── /views                      → Vistas del sistema por rol
+│   ├── /admin                  → Panel de administración
+│   ├── /arbitro                → Panel del árbitro
+│   └── /public                 → Vistas públicas (resultados, tabla, historial)
+│
+├── /backend
+│   ├── /config                 → Conexión a la base de datos y control de sesiones
+│   ├── /api                    → Endpoints PHP que procesan las peticiones del front
+│   └── /helpers                → Funciones auxiliares reutilizables
+│
+└── /bdd
+    └── scoreEd.sql             → Script de creación e inicialización de la base de datos
+
+
+
+
+
+ESPECIFICACIONES PARA NICO
+
+/backend/config/
+    db.php                           → Conexión a la base de datos (PDO/MySQLi)
+    session.php                      → Inicio y validación de sesiones
+    roles.php                        → Control de acceso según rol
+
+/backend/api/
+    → Equipos
+    get-equipos.php                  → Obtener lista de equipos
+    create-equipo.php                → Crear equipo
+    edit-equipo.php                  → Editar equipo
+    delete-equipo.php                → Eliminar equipo
+
+    → Jugadores
+    get-jugadores.php                → Obtener lista de jugadores
+    create-jugador.php               → Crear jugador
+    edit-jugador.php                 → Editar jugador
+    delete-jugador.php               → Eliminar jugador
+
+    → Árbitros
+    get-arbitros.php                 → Obtener lista de árbitros
+    create-arbitro.php               → Crear árbitro
+    edit-arbitro.php                 → Editar árbitro
+    delete-arbitro.php               → Eliminar árbitro
+
+    → Partidos
+    get-partidos.php                 → Obtener lista de partidos
+    create-partido.php               → Registrar nuevo partido
+    edit-partido.php                 → Editar partido
+    delete-partido.php               → Eliminar/cancelar partido
+    update-estado.php                → Cambiar estado del partido
+
+    → Torneos
+    get-torneos.php                  → Obtener lista de torneos
+    create-torneo.php                → Crear torneo
+    edit-torneo.php                  → Editar torneo
+    delete-torneo.php                → Eliminar torneo
+
+    → Eventos
+    get-eventos.php                  → Obtener eventos de un partido
+    create-evento.php                → Registrar evento (gol, tarjeta, etc.)
+    delete-evento.php                → Eliminar evento registrado
+
+    → Tabla y resultados
+    get-tabla-posiciones.php         → Calcular y devolver tabla de posiciones
+    get-resultados.php               → Obtener resultados en tiempo real
+
+    → Autenticación
+    login.php                        → Autenticación de admin y árbitro
+    logout.php                       → Cierre de sesión
+
+/backend/helpers/
+    calculos.php                     → Funciones de cálculo (puntos, diferencia de goles)
+    validaciones.php                 → Funciones de validación de datos de entrada
+    respuesta.php                    → Función estándar para devolver respuestas JSON
+
+/bdd/
+    scoreEd.sql                      → Script completo de creación de la base de datos
+
+
+
+
+TRABAJO EN CONJUNTO CON MUSIL
+
+/assets/js/
+    api.js                           → Funciones genéricas para llamadas al backend (fetch)
+    auth.js                          → Manejo de sesión y redirección por rol
+    public.js                        → Lógica de vistas públicas
+    admin.js                         → Lógica del panel de administración
+    arbitro.js                       → Lógica del panel del árbitro
+    tabla.js                         → Lógica de actualización de tabla de posiciones
+    tiempo-real.js                   → Lógica de actualización automática de resultados

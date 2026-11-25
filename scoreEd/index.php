@@ -1,0 +1,1 @@
+<?php header('Location: /scoreEd/views/public/index.html'); exit;
